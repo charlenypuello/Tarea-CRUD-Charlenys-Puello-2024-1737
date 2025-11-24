@@ -1,5 +1,4 @@
 # validar_entradas.py
-# Validación de entrada para nombres de plantas
 
 def validar_nombre(nombre):
     """Valida que el nombre de la planta no este vacio ni sea muy corto."""
