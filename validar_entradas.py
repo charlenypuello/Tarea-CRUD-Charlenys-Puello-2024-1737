@@ -1,4 +1,3 @@
-/* estilos_mejorados.css */
 body {
     background-color: #f3f3f3;
     font-family: Arial, sans-serif;
