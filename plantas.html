@@ -1,3 +1,88 @@
-plantas.html
-<h1>Interfaz de Plantas</h1>
-<p>Aquí irá la lista de plantas</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema de Plantas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: green;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px #ccc;
+        }
+
+        input, button {
+            padding: 10px;
+            margin: 5px 0;
+            width: 100%;
+            border-radius: 5px;
+        }
+
+        ul {
+            margin-top: 20px;
+        }
+
+        li {
+            padding: 8px;
+            background: #e8ffe8;
+            border-radius: 5px;
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sistema de Plantas</h1>
+
+    <div class="container">
+        <label>Nombre de la planta:</label>
+        <input type="text" id="inputPlanta" placeholder="Ej: lilas, cactus">
+
+        <button onclick="agregarPlanta()">Agregar Planta</button>
+
+        <ul id="lista"></ul>
+    </div>
+
+    <script>
+        const listaPlantas = [];
+
+        function agregarPlanta() {
+            const nombre = document.getElementById("inputPlanta").value;
+
+            if (nombre.trim() === "") {
+                alert("El nombre no puede estar vacio");
+                return;
+            }
+
+            listaPlantas.push(nombre);
+            mostrarPlantas();
+            document.getElementById("inputPlanta").value = "";
+        }
+
+        function mostrarPlantas() {
+            const ul = document.getElementById("lista");
+            ul.innerHTML = "";
+
+            listaPlantas.forEach(planta => {
+                const li = document.createElement("li");
+                li.textContent = planta;
+                ul.appendChild(li);
+            });
+        }
+    </script>
+
+</body>
+</html>
