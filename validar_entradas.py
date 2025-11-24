@@ -1,3 +1,4 @@
+
 # validar_entradas.py
 # Validación de entrada para nombres de plantas
 
@@ -14,3 +15,4 @@ if __name__ == "__main__":
     for p in pruebas:
         valido, mensaje = validar_nombre(p)
         print(f"{p} → {mensaje}")
+
